@@ -22,15 +22,13 @@ fetch('https://rickandmortyapi.com/api/character')
   });
 
   function listCharacters(data){
-    const mainUL = document.createElement('ol');
     for (let i = 0; i < data.results.length; i++) {
-        const li = document.createElement('li');
-        li.innerHTML = data.results[i].name;
-        console.log(data.results[i].name);
-
-        const ul = document.createElement('ul');
-        li.appendChild(ul);
+        d = data.results[i];
+        console.log(d);
+        let div = document.createElement('div');
+            div.innerHTML = `<p>${d.name}</p>`;
+            document.body.appendChild(div);
+        
     }
-    document.body.appendChild(mainUL);
   }
 
